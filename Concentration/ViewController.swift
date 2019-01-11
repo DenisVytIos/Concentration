@@ -43,4 +43,4 @@ class ViewController: UIViewController {
         }
     }
 }
-
+//all tasks for the first lecture
