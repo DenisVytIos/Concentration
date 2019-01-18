@@ -56,13 +56,14 @@ class Concentration {
         let card = Card()
             cards += [card,card]
         }
-        //TODO: Shuffle the card
+        cards.shuffle()
     }
     func resetGame() {
         for index in cards.indices{
             cards[index].isFaceUp = false
             cards[index].isMatched = false
         }
+        cards.shuffle()
     }
     
 }

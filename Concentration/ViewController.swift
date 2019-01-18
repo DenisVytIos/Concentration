@@ -19,6 +19,21 @@ extension Int{
         }
     }
 }
+
+extension Array{
+    mutating func shuffle(){
+        if count < 2{
+            return
+        }
+        
+        for i in indices.dropLast() {
+            let difference = distance(from: i, to: endIndex)
+            let j = index(i, offsetBy: difference.arc4random)
+            swapAt(i, j)
+        }
+        
+    }
+}
 class ViewController: UIViewController {
     
    private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
