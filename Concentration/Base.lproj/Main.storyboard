@@ -262,6 +262,7 @@
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="3O9-RG-1dg" id="hdB-YK-c7I"/>
+                        <outlet property="newGameButton" destination="X3D-IM-uKD" id="9UY-u1-fGJ"/>
                         <outlet property="scoreLabel" destination="kKU-8J-xuR" id="s38-01-nnj"/>
                         <outlet property="titleLabel" destination="1op-Bl-MO0" id="njZ-m5-nmk"/>
                         <outletCollection property="cardButtons" destination="DV1-BN-cGy" collectionClass="NSMutableArray" id="kYY-ot-ddt"/>
@@ -288,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1454" y="-25"/>
+            <point key="canvasLocation" x="-2697" y="-89"/>
         </scene>
     </scenes>
 </document>
