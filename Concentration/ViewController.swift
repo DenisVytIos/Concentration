@@ -59,6 +59,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
     @IBAction func newGame(_ sender: UIButton) {
         game.resetGame()
         indexEmojiThemes = keysEmojiThemes.count.arc4random
@@ -118,6 +121,7 @@ class ViewController: UIViewController {
     private var indexEmojiThemes = 0{
         didSet{
             print (indexEmojiThemes, keysEmojiThemes[indexEmojiThemes])
+            titleLabel.text = keysEmojiThemes[indexEmojiThemes]
             emojiChoices = emojiThemes[keysEmojiThemes[indexEmojiThemes]] ?? []
             emoji = [Int: String] ()
     
