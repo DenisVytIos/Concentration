@@ -36,6 +36,13 @@ extension Array{
 }
 class ViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        indexEmojiThemes = keysEmojiThemes.count.arc4random
+        updateViewFromModel()
+        
+    }
+    
    private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int{
@@ -56,6 +63,7 @@ class ViewController: UIViewController {
     
     @IBAction func newGame(_ sender: UIButton) {
         game.resetGame()
+        indexEmojiThemes = keysEmojiThemes.count.arc4random
         updateViewFromModel()
         flipCount = 0
     }
@@ -100,6 +108,27 @@ class ViewController: UIViewController {
         }
         return emoji[card.identifier] ?? "?"
     }
-   
+    private var emojiThemes:[String: [String]] = [
+        
+        "Fruits" : ["🍏", "🍊", "🍓", "🍉", "🍇", "🍒", "🍌", "🥝", "🍆", "🍑", "🍋"],
+        "Faces" : ["😀", "😂", "🤣", "😃", "😄", "😅", "😆", "😉", "😊", "😋", "😎"],
+        "Activity" : ["⚽️", "🏄‍♂️", "🏑", "🏓", "🚴‍♂️","🥋", "🎸", "🎯", "🎮", "🎹", "🎲"],
+        "Animals" : ["🐶", "🐭", "🦊", "🦋", "🐢", "🐸", "🐵", "🐞", "🐿", "🐇", "🐯"],
+        "Christmas" : ["🎅", "🎉", "🦌", "⛪️", "🌟", "❄️", "⛄️","🎄", "🎁", "🔔", "🕯"],
+        "Clothes" : ["👚", "👕", "👖", "👔", "👗", "👓", "👠", "🎩", "👟", "⛱","🎽"],
+        "Helloween" : ["💀", "👻", "👽", "🙀", "🦇", "🕷", "🕸", "🎃", "🎭","😈", "⚰"]
+    
+    ]
+    private var indexEmojiThemes = 0{
+        didSet{
+            print (indexEmojiThemes, keysEmojiThemes[indexEmojiThemes])
+            emojiChoices = emojiThemes[keysEmojiThemes[indexEmojiThemes]] ?? []
+            emoji = [Int: String] ()
+    
+        }
+    }
+    private var keysEmojiThemes : [String]{
+        return Array(emojiThemes.keys)
+    }
 }
 
