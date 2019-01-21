@@ -61,11 +61,14 @@ class ViewController: UIViewController {
     
     @IBOutlet private var cardButtons: [UIButton]!
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     @IBAction func newGame(_ sender: UIButton) {
         game.resetGame()
         indexEmojiThemes = keysEmojiThemes.count.arc4random
         updateViewFromModel()
         flipCount = 0
+        scoreLabel.text = "Score: 0"
     }
     
     
@@ -92,9 +95,9 @@ class ViewController: UIViewController {
                 button.setTitle("", for: UIControlState.normal)
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0) : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             }
-            
-            
         }
+        
+        scoreLabel.text = "Score:\(game.score)"
         
     }
    private var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎"]
@@ -131,5 +134,7 @@ class ViewController: UIViewController {
     private var keysEmojiThemes : [String]{
         return Array(emojiThemes.keys)
     }
+   
+    
 }
 

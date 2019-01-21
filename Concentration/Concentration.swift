@@ -7,11 +7,18 @@
 //
 
 import Foundation
-    
+
+struct BonusesAndPenalties {
+    static let matchBonus = 2
+    static let missMatchPenalty = 1
+}
 
 class Concentration {
     
     private (set) var cards = [Card]()
+    
+    private (set) var score = 0
+    private var seenAndUnmatchedCards: Set<Int> = []
     
     private var indexOfOneAndOnlyFaceUpCard: Int?{
         get{
@@ -39,8 +46,21 @@ class Concentration {
         if !cards[index].isMatched{
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index{
                 if cards[matchIndex].identifier == cards[index].identifier{
+                    //match
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
+                    
+                    score += BonusesAndPenalties.matchBonus
+                }else{
+                    //cards did not match
+                    if seenAndUnmatchedCards.contains(index){
+                        score -= BonusesAndPenalties.missMatchPenalty
+                    }
+                    if seenAndUnmatchedCards.contains(matchIndex){
+                        score -= BonusesAndPenalties.missMatchPenalty
+                    }
+                    seenAndUnmatchedCards.insert(index)
+                    seenAndUnmatchedCards.insert(matchIndex)
                 }
                 cards[index].isFaceUp = true
             }else{
