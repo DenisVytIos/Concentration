@@ -89,7 +89,7 @@ class ViewController: UIViewController {
     private func updateViewFromModel(){
         for index in cardButtons.indices{
             let button = cardButtons[index]
-            let card = game.cards[index]
+            let card   = game.cards[index]
             if card.isFaceUp{
                 button.setTitle(emoji(for: card), for: UIControlState.normal)
                 button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -98,8 +98,8 @@ class ViewController: UIViewController {
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0) : cardBackColor
             }
         }
-        
-        scoreLabel.text = "Score:\(game.score)"
+
+        scoreLabel.text     = "Score:\(game.score)"
         flipCountLabel.text = "Flips: \(game.flipCount)"
         
     }
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
     }
     private var emojiThemes:[ThemeEmoji] = [
         ThemeEmoji(name: "Fruits",
-                  emojis:["🍏", "🍊", "🍓", "🍉", "🍇", "🍒", "🍌", "🥝", "🍆", "🍑", "🍋"],
+                  emojis: ["🍏", "🍊", "🍓", "🍉", "🍇", "🍒", "🍌", "🥝", "🍆", "🍑", "🍋"],
                   viewColor: #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),
                   cardColor: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)),
         ThemeEmoji(name: "Faces",
@@ -149,26 +149,29 @@ class ViewController: UIViewController {
     private var indexEmojiThemes = 0 {
         didSet{
             print (indexEmojiThemes, emojiThemes[indexEmojiThemes].name)
-            emoji = [Int: String] ()
+            emoji           = [Int: String] ()
             titleLabel.text = emojiThemes[indexEmojiThemes].name
-            
-            emojiChoices = emojiThemes[indexEmojiThemes].emojis
+
+            emojiChoices    = emojiThemes[indexEmojiThemes].emojis
             backgroundColor = emojiThemes[indexEmojiThemes].viewColor
-            cardBackColor = emojiThemes[indexEmojiThemes].cardColor
-            
-            updateAppearance()
+            cardBackColor   = emojiThemes[indexEmojiThemes].cardColor
+
+            updateAppearanceOfTheTheme()
     
         }
     }
-    private var emojiChoices = [String] ()
-    private var backgroundColor = UIColor.black
-    private var cardBackColor = UIColor.orange
     
-    private func updateAppearance() {
-        view.backgroundColor = backgroundColor
-        flipCountLabel.textColor = cardBackColor
-        scoreLabel.textColor = cardBackColor
-        titleLabel.textColor = cardBackColor
+    private var emojiChoices    = [String] ()
+    private var backgroundColor = UIColor.black
+    private var cardBackColor   = UIColor.orange
+    
+    private func updateAppearanceOfTheTheme() {
+        view.backgroundColor           = backgroundColor
+        flipCountLabel.textColor       = backgroundColor
+        flipCountLabel.backgroundColor = cardBackColor
+        scoreLabel.textColor           = backgroundColor
+        scoreLabel.backgroundColor     = cardBackColor
+        titleLabel.textColor           = cardBackColor
         newGameButton.setTitleColor(backgroundColor, for: .normal)
         newGameButton.backgroundColor = cardBackColor
     }
