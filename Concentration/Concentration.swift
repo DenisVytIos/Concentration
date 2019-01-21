@@ -17,6 +17,7 @@ class Concentration {
     
     private (set) var cards = [Card]()
     
+    private (set) var flipCount = 0
     private (set) var score = 0
     private var seenAndUnmatchedCards: Set<Int> = []
     
@@ -44,6 +45,7 @@ class Concentration {
     func chooseCard(at index:Int) {
         assert(cards.indices.contains(index), "Concentration.choosesCard(at: \(index)): choosen index not in the cards")
         if !cards[index].isMatched{
+            flipCount += 1
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index{
                 if cards[matchIndex].identifier == cards[index].identifier{
                     //match
@@ -79,6 +81,9 @@ class Concentration {
         cards.shuffle()
     }
     func resetGame() {
+        flipCount = 0
+        score = 0
+        seenAndUnmatchedCards = []
         for index in cards.indices{
             cards[index].isFaceUp = false
             cards[index].isMatched = false

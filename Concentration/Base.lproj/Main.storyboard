@@ -215,14 +215,14 @@
                                 <rect key="frame" x="39" y="738" width="298" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Flips:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O9-RG-1dg">
-                                        <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="53.333333333333336" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3D-IM-uKD">
-                                        <rect key="frame" x="93.666666666666657" y="0.0" width="110" height="40"/>
+                                        <rect key="frame" x="89.333333333333343" y="0.0" width="110" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <state key="normal" title="New Game">
@@ -233,9 +233,9 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Score:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKU-8J-xuR">
-                                        <rect key="frame" x="229.66666666666671" y="0.0" width="68.333333333333343" height="40"/>
+                                        <rect key="frame" x="235" y="0.0" width="63" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -244,7 +244,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TYi-wP-rUr" firstAttribute="firstBaseline" secondItem="JlS-qp-kM5" secondAttribute="baseline" constant="52" symbolType="layoutAnchor" id="3Fh-PB-1ib"/>
+                            <constraint firstItem="TYi-wP-rUr" firstAttribute="firstBaseline" secondItem="JlS-qp-kM5" secondAttribute="baseline" constant="36" symbolType="layoutAnchor" id="3Fh-PB-1ib"/>
                             <constraint firstItem="SNp-ag-mzr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="D0m-xY-KQY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TYi-wP-rUr" secondAttribute="bottom" id="Dfd-hN-gex"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SNp-ag-mzr" secondAttribute="trailing" constant="16" id="Hqa-lO-Wck"/>
