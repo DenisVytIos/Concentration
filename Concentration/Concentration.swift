@@ -15,11 +15,11 @@ extension Date{
     }
     
 }
-class Concentration {
+struct Concentration {
     
     private (set) var cards = [Card]()
-    
     private (set) var flipCount = 0
+    
     private (set) var score = 0
     private var seenAndUnmatchedCards: Set<Int> = []
     
@@ -54,11 +54,11 @@ class Concentration {
             }
         }
     }
-    func chooseCard(at index:Int) {
+    mutating func chooseCard(at index:Int) {
         assert(cards.indices.contains(index), "Concentration.choosesCard(at: \(index)): choosen index not in the cards")
         if !cards[index].isMatched{
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index{
-                if cards[matchIndex].identifier == cards[index].identifier{
+                if cards[matchIndex] == cards[index]{
                     
                     //match
                     
@@ -104,7 +104,7 @@ class Concentration {
         }
         cards.shuffle()
     }
-    func resetGame() {
+   mutating func resetGame() {
         flipCount = 0
         score     = 0
         seenAndUnmatchedCards = []
