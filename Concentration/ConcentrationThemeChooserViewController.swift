@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ConcentrationThemeChooserViewController: UIViewController, UISplitViewControllerDelegate {
+class ConcentrationThemeChooserViewController: VCLLoggingViewController, UISplitViewControllerDelegate {
+    
+    override var vclLoggingName: String{
+        return "ThemeChooser"
+    }
     //Эту переменую будем устанавливать каждый раз когда переезжаем.Переменная является  последним ConcentrationViewController куда я переехал
     // Переменая будет удерживать в куче вью контроллер даже если ми нажмем кнопку "назад" т.к. это обычная сторонг переменная
    //31
@@ -18,6 +22,7 @@ class ConcentrationThemeChooserViewController: UIViewController, UISplitViewCont
         return splitViewController?.viewControllers.last as? ConcentrationViewController
     }
     override func awakeFromNib() {
+        super.awakeFromNib()
         splitViewController?.delegate = self
     }
     //36
